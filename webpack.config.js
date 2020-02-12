@@ -10,17 +10,17 @@ module.exports = {
   devtool: 'cheap-source-map',
 
   devServer: {
-    contentBase: `${__dirname}/chrome-ext/build`,
+    contentBase: `${__dirname}/extension/build`,
   },
 
   entry: {
-    bundle: './chrome-ext/frontend/devtools.js',
-    installHook: './chrome-ext/backend/installHook.js',
+    bundle: './extension/frontend/devtools.js',
+    installHook: './extension/backend/installHook.js',
   },
 
   output: {
     filename: '[name].js',
-    path: `${__dirname}/build/chrome-ext`,
+    path: `${__dirname}/build/extension`,
   },
 
   module: {
@@ -42,11 +42,11 @@ module.exports = {
   plugins: [
     new CopyWebpackPlugin([
       // {output}/to/file.txt
-      { from: 'chrome-ext/manifest.json', to: '../chrome-ext/manifest.json' },
-      { from: 'chrome-ext/content-script.js', to: '../chrome-ext/content-script.js' },
-      { from: 'chrome-ext/background.js', to: '../chrome-ext/background.js' },
-      { from: 'chrome-ext/devtools.html', to: '../chrome-ext/devtools.html' },
-      { from: 'chrome-ext/asset/', to: '../chrome-ext/asset/' },
+      { from: 'extension/manifest.json', to: '../extension/manifest.json' },
+      { from: 'extension/content-script.js', to: '../extension/content-script.js' },
+      { from: 'extension/background.js', to: '../extension/background.js' },
+      { from: 'extension/devtools.html', to: '../extension/devtools.html' },
+      { from: 'extension/asset/', to: '../extension/asset/' },
     ]),
   ],
 };

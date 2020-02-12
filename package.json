@@ -14,9 +14,9 @@
     "dev tool"
   ],
   "scripts": {
-    "lint": "eslint chrome-ext",
+    "lint": "eslint extension",
     "start": "webpack -w",
-    "start:dev": "NODE_PATH=. NODE_ENV='development' webpack-dev-server --content-base chrome-ext/build",
+    "start:dev": "NODE_PATH=. NODE_ENV='development' webpack-dev-server --content-base extension/build",
     "test": "jest",
     "coveralls": "NODE_PATH=. node_modules/.bin/jest && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "build": "webpack -p",
